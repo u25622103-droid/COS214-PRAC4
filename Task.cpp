@@ -22,9 +22,9 @@ double Task::getCost() const { return cost; }
 
 void Task::display(int depth) const {
     std::string indent(depth * 2, ' ');
-    std::cout << indent << "├─ Task: " << name 
+    std::cout << indent << " Task: " << name 
               << " | Progress: " << progress << "%"
-              << " | Cost: $" << cost
+              << " | Cost: R" << cost
               << " | State: " << getStateName()
               << " | Est: " << estimatedHours << "h"
               << " | Actual: " << actualHours << "h"
