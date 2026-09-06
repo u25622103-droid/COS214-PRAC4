@@ -82,9 +82,9 @@ double TaskGroup::getCost() const {
 
 void TaskGroup::display(int depth) const {
     std::string indent(depth * 2, ' ');
-    std::cout << indent << "📁 Group: " << name 
+    std::cout << indent << "Group: " << name 
               << " | Progress: " << getProgress() << "%"
-              << " | Cost: $" << getCost()
+              << " | Cost: R" << getCost()
               << " | State: " << getStateName()
               << " | Children: " << children.size()
               << std::endl;
