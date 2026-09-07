@@ -1,0 +1,210 @@
+* 60058ae9112f562e2c02680d4c9d435c2a87d01d
+| Author: u25622103-droid <u25622103@tuks.co.za>
+| Date: 2026-09-08 01:28:34 +0200
+| Commit: Update README.md
+| 
+| ----------------------------------------
+* a18393f9e8c967243da69c34a1d5c62f8c7b05b1
+| Author: u25622103-droid <u25622103@tuks.co.za>
+| Date: 2026-09-08 01:27:48 +0200
+| Commit: Update README.md
+| 
+| ----------------------------------------
+* 531bf8ab37782092aebeba67a1d40e5692124d6e
+| Author: u25622103-droid <u25622103@tuks.co.za>
+| Date: 2026-09-08 01:21:03 +0200
+| Commit: Docker setup
+| 
+| ----------------------------------------
+* 7711314cf6a80035986c0ac5cc9b050feff49e61
+| Author: u25622103-droid <u25622103@tuks.co.za>
+| Date: 2026-09-08 00:58:10 +0200
+| Commit: Fixed destruction of the decorators
+| 
+| ----------------------------------------
+* b1eee50d665e2f25252e0946aece2fd29a737abf
+| Author: u25622103-droid <u25622103@tuks.co.za>
+| Date: 2026-09-08 00:42:48 +0200
+| Commit: Delete organized.pdf:Zone.Identifier
+| 
+| ----------------------------------------
+* 0d66958188013f1c525b795202a927dd4e88c49d
+| Author: u25622103-droid <u25622103@tuks.co.za>
+| Date: 2026-09-08 00:42:15 +0200
+| Commit: Delete COS 214 Prac 4_merged.pdf:Zone.Identifier
+| 
+| ----------------------------------------
+* 6261f23729a2a0db30400d6e26fccfae8e974c52
+| Author: Lethukuthula <u24986535@tuks.co.za>
+| Date: 2026-09-08 00:29:23 +0200
+| Commit: Add files via upload
+| 
+| ----------------------------------------
+* 8524a92dc01ebc6c25308945af608c3ad8f3eaa3
+| Author: Lethukuthula <u24986535@tuks.co.za>
+| Date: 2026-09-08 00:03:19 +0200
+| Commit: This is the updated UML
+| Master P, you just need to update the decorator and its concrete
+| ----------------------------------------
+* 44304e96e5b257ed2ce0424d7d2d0e908f6b941e
+| Author: Lethukuthula <u24986535@tuks.co.za>
+| Date: 2026-09-07 22:58:29 +0200
+| Commit: Add files via upload
+| 
+| ----------------------------------------
+*   dd78acaf454f5cb122fd77495edea170602913d6
+|\  Author: Manqoba <128795628+Manqoba-Mashego@users.noreply.github.com>
+| | Date: 2026-09-07 21:15:44 +0200
+| | Commit: Merge pull request #3 from u25622103-droid/documents
+| | Documents
+| | ----------------------------------------
+| * 856c083e551f1d890e369c49d06c2047da0d73c9
+| | Author: Master P <manqoba.mashego@imaginescholar.org>
+| | Date: 2026-09-07 19:40:38 +0200
+| | Commit: makefile
+| | 
+| | ----------------------------------------
+| * ee60cbce90db29ae12bbe763fc59663e03e7a9ea
+| | Author: Master P <manqoba.mashego@imaginescholar.org>
+| | Date: 2026-09-05 18:41:50 +0200
+| | Commit: PDF and updated UML
+| | 
+| | ----------------------------------------
+| * a81f3aa5c47679d4ad0a19ceec31acfe0cf5de2c
+| | Author: Master P <manqoba.mashego@imaginescholar.org>
+| | Date: 2026-09-04 18:39:02 +0200
+| | Commit: UML
+| | 
+| | ----------------------------------------
+* | 34b02c2d799858208554fae1f75844b586339d0e
+| | Author: Lethukuthula <u24986535@tuks.co.za>
+| | Date: 2026-09-07 18:45:18 +0200
+| | Commit: Update WorkItem.cpp
+| | 
+| | ----------------------------------------
+* | 706c5f2027784bba0cc99f197075cf74031e7038
+| | Author: Lethukuthula <u24986535@tuks.co.za>
+| | Date: 2026-09-07 18:43:15 +0200
+| | Commit: Update TaskGroup.cpp
+| | 
+| | ----------------------------------------
+* | 4c3be7ff62d3e78d0d48957540266c488a39e7da
+| | Author: Lethukuthula <u24986535@tuks.co.za>
+| | Date: 2026-09-07 18:36:25 +0200
+| | Commit: Update States.cpp
+| | 
+| | ----------------------------------------
+* | 81c915f5473391240c7a1eac7ea44df85991ceb8
+| | Author: Lethukuthula <u24986535@tuks.co.za>
+| | Date: 2026-09-07 18:33:54 +0200
+| | Commit: Update States.cpp
+| | 
+| | ----------------------------------------
+* | 5243f2d5c97972d7cdf5aadbfb6bd623049c1cca
+| | Author: Lethukuthula <u24986535@tuks.co.za>
+| | Date: 2026-09-07 18:30:08 +0200
+| | Commit: Update Task.cpp
+| | 
+| | ----------------------------------------
+* | 771d80ceb27b4a58ed2ca1e2ee36bdcaa0a67c1c
+| | Author: Lethukuthula <u24986535@tuks.co.za>
+| | Date: 2026-09-07 18:21:57 +0200
+| | Commit: Update Task.cpp
+| | 
+| | ----------------------------------------
+* | 6a0066697bf7bf70eed2481721c0ef39cc282a35
+| | Author: u25622103-droid <u25622103@tuks.co.za>
+| | Date: 2026-09-07 13:42:28 +0200
+| | Commit: Implemented decorators
+| | 
+| | ----------------------------------------
+* | 32b494370ee185baeba5c17d8945a79eeece54db
+| | Author: u25622103-droid <u25622103@tuks.co.za>
+| | Date: 2026-09-07 13:39:21 +0200
+| | Commit: Fixed getter for tag decorator
+| | 
+| | ----------------------------------------
+* | 2c0fada1dfc9f5efad50b49cbf354e9629a80135
+| | Author: u25622103-droid <u25622103@tuks.co.za>
+| | Date: 2026-09-07 13:35:44 +0200
+| | Commit: Added new setter for deadline decorator
+| | 
+| | ----------------------------------------
+* | 889913268e4e3bd1b2ebaea799018fd597c932cb
+| | Author: u25622103-droid <u25622103@tuks.co.za>
+| | Date: 2026-09-07 13:30:15 +0200
+| | Commit: Fixed private feature
+| | 
+| | ----------------------------------------
+* | ee49565d2e03acf48a89022756bff43c645a7374
+| | Author: u25622103-droid <u25622103@tuks.co.za>
+| | Date: 2026-09-07 13:29:02 +0200
+| | Commit: Declared decorators
+| | 
+| | ----------------------------------------
+* |   adc655d95c50ad636d19a8273e8a982b4e682aff
+|\ \  Author: u25622103-droid <u25622103@tuks.co.za>
+| | | Date: 2026-09-07 13:13:07 +0200
+| | | Commit: Merge branch 'main' of https://github.com/u25622103-droid/COS214-PRAC4
+| | | 
+| | | ----------------------------------------
+| * \   d6581c1ecb35f0d306d515af1863f296a137f268
+| |\ \  Author: Lethukuthula <u24986535@tuks.co.za>
+| | | | Date: 2026-09-07 12:17:57 +0200
+| | | | Commit: Merge pull request #2 from u25622103-droid/The-activity-diagrams
+| | | | The activity diagrams
+| | | | ----------------------------------------
+| | * | 9ff6ce583977f9cd72759eb493d7afdecbed809a
+| | | | Author: Lethukuthula <u24986535@tuks.co.za>
+| | | | Date: 2026-09-07 11:42:57 +0200
+| | | | Commit: Add files via upload
+| | | | we are almost done with the diagrams,only one uml activity diagram is still missing one that uses the swimlanes
+| | | | ----------------------------------------
+| | * | d853f08f464746b1db45616c9b0a39de6f7ff002
+| |/ /  Author: Lethukuthula <u24986535@tuks.co.za>
+| | |   Date: 2026-09-07 00:26:41 +0200
+| | |   Commit: These are the activity diagram
+| | |   Please fix,if there are mistakes, i struggled using the visual paradigm
+| | |   ----------------------------------------
+* | | 6c47bb588d0c76ee64a86becaaffab54beeadb21
+| | | Author: u25622103-droid <u25622103@tuks.co.za>
+| | | Date: 2026-09-07 13:12:58 +0200
+| | | Commit: Implemented iterator
+| | | 
+| | | ----------------------------------------
+* | | 446fa084b3a1d8674abca12b0699739882fcfcfd
+|/ /  Author: u25622103-droid <u25622103@tuks.co.za>
+| |   Date: 2026-09-07 13:12:37 +0200
+| |   Commit: Declared iterator features and functions
+| |   
+| |   ----------------------------------------
+* |   82e0ec72c9de781a3c0a4e8f93ddbde31c9903a2
+|\ \  Author: Lethukuthula <u24986535@tuks.co.za>
+| |/  Date: 2026-09-06 23:16:02 +0200
+|/|   Commit: Merge pull request #1 from u25622103-droid/Updated-UML-,state-and-composite-implementation
+| |   Updated uml ,state and composite implementation
+| |   ----------------------------------------
+| * b38f473257bd60aee644bf4571c7199ec925a305
+| | Author: Lethukuthula <u24986535@tuks.co.za>
+| | Date: 2026-09-06 22:09:14 +0200
+| | Commit: Restore includes and formatting in Task.cpp
+| | 
+| | ----------------------------------------
+| * a6efe1408f7262ddfa109cb13a95f9ac2b69acd9
+| | Author: Lethukuthula <u24986535@tuks.co.za>
+| | Date: 2026-09-06 22:08:37 +0200
+| | Commit: Update TaskGroup.cpp
+| | just fixing a typo there
+| | ----------------------------------------
+| * 112a32251c2dcdc7e9eb7f8435481270a70b3f20
+|/  Author: Lethukuthula <u24986535@tuks.co.za>
+|   Date: 2026-09-06 21:58:57 +0200
+|   Commit: Add files via upload
+|   
+|   ----------------------------------------
+* f97a7518ac7c427123bc208eeda9960056d9f547
+  Author: u25622103-droid <u25622103@tuks.co.za>
+  Date: 2026-09-01 18:34:04 +0200
+  Commit: Initial commit
+  
+  ----------------------------------------
