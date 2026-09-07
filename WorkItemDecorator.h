@@ -70,7 +70,7 @@ class TagDecorator : public WorkItemDecorator {
     public:
         TagDecorator(WorkItem* item);
         void addTag(const std::string& tag);
-        std::vector<std::string> getTags();
+        std::vector<std::string> getTags() const;
         void display(int depth = 0) const override;
 
 };
