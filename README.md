@@ -13,14 +13,23 @@ A software project management system demonstrating the Composite, State, Iterato
 
 # Project Structure
 ├── main.cpp              # Demo application
+
 ├── WorkItem.h/.cpp       # Abstract component
+
 ├── Task.h/.cpp           # Leaf component
+
 ├── TaskGroup.h/.cpp      # Composite component
+
 ├── TaskState.h           # State interface
+
 ├── States.h/.cpp         # Concrete states
+
 ├── Iterator.h/.cpp       # Level-order iterator
+
 ├── WorkItemDecorator.h/.cpp  # Decorator pattern
+
 ├── Dockerfile            # Docker configuration
+
 └── Makefile              # Build configuration
 
 ## Building
