@@ -1,7 +1,5 @@
 #include "TaskGroup.h"
 #include "States.h"
-#include <algorithm>
-#include <stdexcept>
 #include <iostream>
 
 TaskGroup::TaskGroup(const std::string& name, const std::string& desc, double cost)
@@ -16,23 +14,19 @@ TaskGroup::~TaskGroup() {
 }
 
 void TaskGroup::addItem(WorkItem* item) {
-    if (!item) {
-        throw std::runtime_error("Cannot add null item");
+    if (item) {
+        children.push_back(item);
     }
-    children.push_back(item);
+    
 }
 
 void TaskGroup::removeItem(const std::string& name) {
-    auto it = std::find_if(children.begin(), children.end(),
-        [&name](WorkItem* item) {
-            return item->getName() == name;
-        });
-    
-    if (it != children.end()) {
-        delete *it;
-        children.erase(it);
-    } else {
-        throw std::runtime_error("Item not found: " + name);
+    for (auto find = children.begin(); find != children.end(); ++find) {
+        if ((*find)->getName() == name) {
+            delete *find;
+            children.erase(find);
+            return;
+        }
     }
 }
 
@@ -51,7 +45,7 @@ WorkItem* TaskGroup::getItem(const std::string& name) {
             }
         }
     }
-    throw std::runtime_error("Item not found: " + name);
+    return nullptr;
 }
 
 std::vector<WorkItem*> TaskGroup::getChildren() const {
@@ -83,10 +77,10 @@ double TaskGroup::getCost() const {
 void TaskGroup::display(int depth) const {
     std::string indent(depth * 2, ' ');
     std::cout << indent << "Group: " << name 
-              << " | Progress: " << getProgress() << "%"
-              << " | Cost: R" << getCost()
-              << " | State: " << getStateName()
-              << " | Children: " << children.size()
+              << " Progress: " << getProgress() << "%"
+              << " Cost: R" << getCost()
+              << " State: " << getStateName()
+              << " Children: " << children.size()
               << std::endl;
     
     for (WorkItem* child : children) {
@@ -115,7 +109,6 @@ void TaskGroup::completeTask() {
         }
     } else {
         std::cout << "Cannot complete group - not all children are completed\n";
-        throw std::runtime_error("Cannot complete group - not all children are completed");
     }
 }
 
