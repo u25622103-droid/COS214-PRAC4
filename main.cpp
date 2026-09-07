@@ -671,85 +671,28 @@ void demonstrateRuntimeChange(TaskGroup *project)
  */
 void demonstrateDecorators()
 {
-    printHeader("TASKFORGE WORKFLOW: ENHANCE A TASK");
+        printHeader("TASKFORGE WORKFLOW: ENHANCE A TASK");
 
-    Task *baseTask =
-        new Task("Security Audit",
-                 "Perform security checks on the website",
-                 4000.0,
-                 30.0);
+    // Use stack allocation - no manual cleanup needed
+    Task baseTask("Security Audit", "Perform security checks on the website", 4000.0, 30.0);
+    
+    std::cout << "\nOriginal task:" << std::endl;
+    baseTask.display();
 
-    std::cout << "\nOriginal task:"
-              << std::endl;
+    // Stack-allocated decorators (auto-cleanup in reverse order)
+    PriorityDecorator priorityTask(&baseTask, 5);
+    DeadlineDecorator deadlineTask(&priorityTask, "2026-09-15");
+    TagDecorator taggedTask(&deadlineTask);
 
-    baseTask->display();
-
-    // First decorator
-    PriorityDecorator *priorityTask =
-        new PriorityDecorator(baseTask, 5);
-
-    // Second decorator
-    DeadlineDecorator *deadlineTask =
-        new DeadlineDecorator(priorityTask,
-                              "2026-09-15");
-
-    // Third decorator
-    TagDecorator *taggedTask =
-        new TagDecorator(deadlineTask);
-
-    taggedTask->addTag("security");
-    taggedTask->addTag("urgent");
-    taggedTask->addTag("release");
-
-    std::cout << "\nAfter applying decorators:"
-              << std::endl;
-
-    taggedTask->display();
-
-    std::cout << "\nDecorator properties:"
-              << std::endl;
-
-    std::cout << "Priority: "
-              << priorityTask->getPriority()
-              << std::endl;
-
-    std::cout << "Deadline: "
-              << deadlineTask->getDeadline()
-              << std::endl;
-
-    std::cout << "Tags: ";
-
-    std::vector<std::string> tags =
-        taggedTask->getTags();
-
-    for (const std::string &tag : tags)
-    {
-        std::cout << tag << " ";
-    }
-
-    std::cout << std::endl;
-
-    std::cout << "\nStarting decorated task:"
-              << std::endl;
-
-    taggedTask->startTask();
-
-    baseTask->setProgress(50.0);
-
-    std::cout << "State through decorator: "
-              << taggedTask->getStateName()
-              << std::endl;
-
-    std::cout << "Progress through decorator: "
-              << taggedTask->getProgress()
-              << "%"
-              << std::endl;
+    taggedTask.addTag("security");
+    taggedTask.addTag("urgent");
+    taggedTask.addTag("release");
 
     /*
      * The outer decorator owns the wrapped decorator,
      * which owns the next decorator, which owns baseTask.
      */
-    delete taggedTask;
+   
 }
 
 /*
