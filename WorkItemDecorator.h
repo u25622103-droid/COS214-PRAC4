@@ -6,38 +6,38 @@
 
 class WorkItemDecorator : public WorkItem {
 protected:
-    WorkItem* wrapped;
+    WorkItem* wrappedItem;
 
 public:
     WorkItemDecorator(WorkItem* item) : WorkItem(
         item->getName(),
         item->getDescription(),
         item->getCost()
-    ), wrapped(item) {}
+    ), wrappedItem(item) {}
 
     ~WorkItemDecorator() override {
     }
 
-    std::string getName() const override { return wrapped->getName(); }
-    std::string getDescription() const override { return wrapped->getDescription(); }
-    double getCost() const override { return wrapped->getCost(); }
-    void setName(const std::string& n) override { wrapped->setName(n); }
-    void setDescription(const std::string& d) override { wrapped->setDescription(d); }
+    std::string getName() const override { return wrappedItem->getName(); }
+    std::string getDescription() const override { return wrappedItem->getDescription(); }
+    double getCost() const override { return wrappedItem->getCost(); }
+    void setName(const std::string& n) override { wrappedItem->setName(n); }
+    void setDescription(const std::string& d) override { wrappedItem->setDescription(d); }
 
-    double getProgress() const override { return wrapped->getProgress(); }
-    void display(int depth = 0) const override { wrapped->display(depth); }
-    bool isComposite() const override { return wrapped->isComposite(); }
+    double getProgress() const override { return wrappedItem->getProgress(); }
+    void display(int depth = 0) const override { wrappedItem->display(depth); }
+    bool isComposite() const override { return wrappedItem->isComposite(); }
 
-    void startTask() override { wrapped->startTask(); }
-    void pauseTask() override { wrapped->pauseTask(); }
-    void completeTask() override { wrapped->completeTask(); }
-    void blockTask() override { wrapped->blockTask(); }
-    void unblockTask() override { wrapped->unblockTask(); }
-    void cancelTask() override { wrapped->cancelTask(); }
-    std::string getStateName() const override { return wrapped->getStateName(); }
-    void setState(TaskState* newState) override { wrapped->setState(newState); }
+    void startTask() override { wrappedItem->startTask(); }
+    void pauseTask() override { wrappedItem->pauseTask(); }
+    void completeTask() override { wrappedItem->completeTask(); }
+    void blockTask() override { wrappedItem->blockTask(); }
+    void unblockTask() override { wrappedItem->unblockTask(); }
+    void cancelTask() override { wrappedItem->cancelTask(); }
+    std::string getStateName() const override { return wrappedItem->getStateName(); }
+    void setState(TaskState* newState) override { wrappedItem->setState(newState); }
 
-    WorkItem* getWrapped() const { return wrapped; }
+    WorkItem* getWrapped() const { return wrappedItem; }
 };
 
 class PriorityDecorator : public WorkItemDecorator {
@@ -71,7 +71,7 @@ class TagDecorator : public WorkItemDecorator {
         void addTag(const std::string& tag);
         std::vector<std::string> getTags();
         void display(int depth = 0) const override;
-        
+
 };
 
 
