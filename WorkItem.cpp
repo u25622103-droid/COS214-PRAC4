@@ -44,3 +44,8 @@ size_t WorkItem::getChildCount() const {
 bool WorkItem::isComposite() const { 
     return false; 
 }
+
+WorkItem* WorkItem::getChild(size_t index) const
+{
+    return nullptr;
+}

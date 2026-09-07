@@ -10,6 +10,7 @@
 class NotStartedState : public TaskState
 {
 public:
+    TaskState *clone() const override { return new NotStartedState(*this); }
     void start() override;
     void pause() override;
     void complete() override;
@@ -28,6 +29,7 @@ public:
 class InProgressState : public TaskState
 {
 public:
+    TaskState *clone() const override { return new InProgressState(*this); }
     void start() override;
     void pause() override;
     void complete() override;
@@ -47,6 +49,7 @@ public:
 class PausedState : public TaskState
 {
 public:
+    TaskState *clone() const override { return new PausedState(*this); }
     void start() override;
     void pause() override;
     void complete() override;
@@ -64,6 +67,7 @@ public:
 class BlockedState : public TaskState
 {
 public:
+    TaskState *clone() const override { return new BlockedState(*this); }
     void start() override;
     void pause() override;
     void complete() override;
@@ -81,6 +85,7 @@ public:
 class CompletedState : public TaskState
 {
 public:
+    TaskState *clone() const override { return new CompletedState(*this); }
     void start() override;
     void pause() override;
     void complete() override;
@@ -96,6 +101,7 @@ public:
 class CancelledState : public TaskState
 {
 public:
+    TaskState *clone() const override { return new CancelledState(*this); }
     void start() override;
     void pause() override;
     void complete() override;

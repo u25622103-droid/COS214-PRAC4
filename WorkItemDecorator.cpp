@@ -11,7 +11,7 @@ void PriorityDecorator::setPriority(int p) {
     priority = p; 
 }
 
-void PriorityDecorator::display(int depth = 0) const {
+void PriorityDecorator::display(int depth ) const {
     std::string indent(depth * 2, ' ');
     std::cout << indent << "[Priority: " << priority << "] ";
     wrappedItem->display(depth);
@@ -27,7 +27,7 @@ void DeadlineDecorator::setDeadline(const std::string& d) {
     deadline = d; 
 }
 
-void DeadlineDecorator::display(int depth = 0) const {
+void DeadlineDecorator::display(int depth) const {
     std::string indent(depth * 2, ' ');
     std::cout << indent << "[Deadline: " << deadline << "] ";
     wrappedItem->display(depth);
@@ -43,7 +43,7 @@ std::vector<std::string> TagDecorator::getTags() const {
     return tags; 
 }
 
-void TagDecorator::display(int depth = 0) const {
+void TagDecorator::display(int depth ) const {
     std::string indent(depth * 2, ' ');
     std::cout << indent << "[Tags: ";
     for (size_t i = 0; i < tags.size(); ++i) {

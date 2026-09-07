@@ -16,7 +16,7 @@ protected:
 
 public:
     virtual ~TaskState() = default;
-    
+    virtual TaskState* clone() const = 0;
     void setContext(WorkItem* task) { context = task; }
     
     // State transition methods

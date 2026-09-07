@@ -1,5 +1,6 @@
 #include "States.h"
 #include "WorkItem.h"
+#include <stdexcept>
 #include <iostream>
 
 // NotStartedState

@@ -11,7 +11,7 @@
  */
 class Task : public WorkItem {
 private:
-    double progress;          // 0.0 to 100.0
+    double progress;          
     double estimatedHours;
     double actualHours;
     TaskState* state;
@@ -44,7 +44,9 @@ public:
     void cancelTask() override;
     std::string getStateName() const override;
     void setState(TaskState* newState) override;
-
+    bool isCompleted() const override { 
+        return state ? state->getStateName() == "Completed" : false; 
+}
     // Getter for state
     TaskState* getState() const { return state; }
 };

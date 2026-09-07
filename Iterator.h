@@ -2,7 +2,6 @@
 #define ITERATOR_H
 
 #include <vector>
-#include <queue>
 #include "WorkItem.h"
 
 class Iterator {
@@ -14,7 +13,7 @@ class Iterator {
         virtual bool isDone() const = 0;
         virtual std::vector<WorkItem*> all() const = 0;
         virtual std::vector<WorkItem*> getLevel(int level) = 0;
-        int getLevelCount();
+        virtual int getLevelCount() = 0;
 };
 
 class LevelIterator : public Iterator {
@@ -34,7 +33,7 @@ class LevelIterator : public Iterator {
         bool isDone() const override;
         std::vector<WorkItem*> all() const override;
         std::vector<WorkItem*> getLevel(int level) override;
-        int getLevelCount();
+        int getLevelCount() override;
 };      
 
 #endif//ITERATOR_H

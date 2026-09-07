@@ -1,12 +1,12 @@
 CXX = g++
 CXXFLAGS = -Wall -Werror -std=c++11 -g
-TARGET = engine
+
+TARGET = taskforge
 
 SRCS = $(wildcard *.cpp)
 OBJS = $(SRCS:.cpp=.o)
 
-# Default target
-#all: $(TARGET)
+all: $(TARGET)
 
 $(TARGET): $(OBJS)
 	$(CXX) $(OBJS) -o $(TARGET)
@@ -17,5 +17,8 @@ $(TARGET): $(OBJS)
 clean:
 	rm -f $(OBJS) $(TARGET)
 
-valgrind:
-	valgrind --leak-check=full -s --show-leak-kinds=all --track-origins=yes ./engine
+run: $(TARGET)
+	./$(TARGET)
+
+valgrind: $(TARGET)
+	valgrind --leak-check=full -s --show-leak-kinds=all --track-origins=yes ./$(TARGET)

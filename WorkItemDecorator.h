@@ -7,15 +7,19 @@
 class WorkItemDecorator : public WorkItem {
 protected:
     WorkItem* wrappedItem;
+    bool ownsWrapped;
 
 public:
     WorkItemDecorator(WorkItem* item) : WorkItem(
         item->getName(),
         item->getDescription(),
         item->getCost()
-    ), wrappedItem(item) {}
+    ), wrappedItem(item), ownsWrapped(false) {}
 
     ~WorkItemDecorator() override {
+        if (ownsWrapped) {
+            delete wrappedItem;
+        }
     }
 
     std::string getName() const override { return wrappedItem->getName(); }
@@ -38,6 +42,7 @@ public:
     void setState(TaskState* newState) override { wrappedItem->setState(newState); }
 
     WorkItem* getWrapped() const { return wrappedItem; }
+    void detach() { ownsWrapped = false; }
 };
 
 class PriorityDecorator : public WorkItemDecorator {

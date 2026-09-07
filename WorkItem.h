@@ -45,6 +45,7 @@ public:
     virtual WorkItem* getItem(const std::string& name);
     virtual std::vector<WorkItem*> getChildren() const;
     virtual size_t getChildCount() const;
+    virtual WorkItem* getChild(size_t index) const;
     virtual bool isComposite() const;
     
     // Virtual operations for derived classes
@@ -58,6 +59,7 @@ public:
     virtual void pauseTask() = 0;
     virtual void completeTask() = 0;
     virtual void cancelTask() = 0;
+    virtual bool isCompleted() const { return false; }
     virtual std::string getStateName() const = 0;
     virtual void setState(TaskState* newState) = 0;
 };
