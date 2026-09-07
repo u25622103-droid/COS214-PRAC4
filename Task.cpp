@@ -9,7 +9,7 @@ Task::Task(const std::string& name, const std::string& desc,
       progress(0.0),
       estimatedHours(estimatedHours),
       actualHours(0.0),
-      state(new NotStartedState()) {  // Changed from CreatedState to NotStartedState
+      state(new NotStartedState()) { 
     state->setContext(this);
 }
 
