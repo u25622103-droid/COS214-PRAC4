@@ -1,0 +1,15 @@
+*.o
+*.gch
+*.exe
+*.out
+*.d
+*.gcda
+*.gcno
+*.gcov
+build/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
