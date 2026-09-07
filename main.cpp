@@ -695,6 +695,206 @@ void demonstrateDecorators()
    
 }
 
+
+/*
+ * Demonstrates blocking and unblocking a task.
+ */
+void demonstrateBlocking()
+{
+    printHeader("TASKFORGE WORKFLOW: BLOCKING TASKS");
+
+    Task *task =
+        new Task("Database Migration",
+                 "Migrate database schema",
+                 2500.0,
+                 15.0);
+
+    std::cout << "\nStarting task:"
+              << std::endl;
+
+    task->startTask();
+
+    std::cout << "State: "
+              << task->getStateName()
+              << std::endl;
+
+    std::cout << "\nBlocking task (waiting for approval):"
+              << std::endl;
+
+    task->blockTask();
+
+    std::cout << "State: "
+              << task->getStateName()
+              << std::endl;
+
+    std::cout << "\nAttempting to start while blocked:"
+              << std::endl;
+
+    task->startTask();
+
+    std::cout << "\nUnblocking task:"
+              << std::endl;
+
+    task->unblockTask();
+
+    std::cout << "State: "
+              << task->getStateName()
+              << std::endl;
+
+    std::cout << "\nCompleting task:"
+              << std::endl;
+
+    task->completeTask();
+
+    std::cout << "Final state: "
+              << task->getStateName()
+              << std::endl;
+
+    delete task;
+}
+
+/*
+ * Demonstrates cancelling a task in various states.
+ */
+void demonstrateCancellation()
+{
+    printHeader("TASKFORGE WORKFLOW: CANCELLING TASKS");
+
+    Task *task1 =
+        new Task("Legacy Feature",
+                 "Remove deprecated feature",
+                 1000.0,
+                 5.0);
+
+    std::cout << "\nCancelling not-started task:"
+              << std::endl;
+
+    task1->cancelTask();
+
+    std::cout << "State: "
+              << task1->getStateName()
+              << std::endl;
+
+    Task *task2 =
+        new Task("Refactoring",
+                 "Refactor old code",
+                 2000.0,
+                 10.0);
+
+    std::cout << "\nStarting and cancelling in-progress task:"
+              << std::endl;
+
+    task2->startTask();
+    task2->cancelTask();
+
+    std::cout << "State: "
+              << task2->getStateName()
+              << std::endl;
+
+    Task *task3 =
+        new Task("Feature X",
+                 "New feature implementation",
+                 3000.0,
+                 20.0);
+
+    std::cout << "\nStarting, pausing, and cancelling paused task:"
+              << std::endl;
+
+    task3->startTask();
+    task3->pauseTask();
+    task3->cancelTask();
+
+    std::cout << "State: "
+              << task3->getStateName()
+              << std::endl;
+
+    delete task1;
+    delete task2;
+    delete task3;
+}
+
+/*
+ * Demonstrates operations on TaskGroups.
+ */
+void demonstrateGroupOperations()
+{
+    printHeader("TASKFORGE WORKFLOW: GROUP OPERATIONS");
+
+    TaskGroup *group =
+        new TaskGroup("Development Team",
+                      "All development tasks",
+                      5000.0);
+
+    Task *task1 =
+        new Task("Task 1", "First task", 1000.0, 10.0);
+    Task *task2 =
+        new Task("Task 2", "Second task", 1500.0, 15.0);
+    Task *task3 =
+        new Task("Task 3", "Third task", 2000.0, 20.0);
+
+    group->addItem(task1);
+    group->addItem(task2);
+    group->addItem(task3);
+
+    std::cout << "\nInitial group:"
+              << std::endl;
+    group->display();
+
+    std::cout << "\nStarting group:"
+              << std::endl;
+    group->startTask();
+    group->display();
+
+    std::cout << "\nCompleting all tasks:"
+              << std::endl;
+
+    task1->setProgress(100.0);
+    task1->completeTask();
+
+    task2->setProgress(100.0);
+    task2->completeTask();
+
+    task3->setProgress(100.0);
+    task3->completeTask();
+
+    std::cout << "\nCompleting group:"
+              << std::endl;
+    group->completeTask();
+    group->display();
+
+    std::cout << "\nGroup state: "
+              << group->getStateName()
+              << std::endl;
+
+    delete group;
+}
+
+
+/*
+ * Displays a summary of all tasks in the project.
+ */
+void demonstrateSummary(TaskGroup *project)
+{
+    printHeader("TASKFORGE WORKFLOW: PROJECT SUMMARY");
+
+    std::cout << "\nProject: "
+              << project->getName()
+              << std::endl;
+
+    std::cout << "Total cost: R"
+              << project->getCost()
+              << std::endl;
+
+    std::cout << "Overall progress: "
+              << project->getProgress()
+              << "%"
+              << std::endl;
+
+    std::cout << "Total tasks: "
+              << project->getTotalTaskCount()
+              << std::endl;
+}
+
 /*
  * Main coherent TaskForge demonstration.
  */
@@ -716,44 +916,40 @@ void runTaskForgeDemo()
     // 2. Recursive Composite search
     demonstrateFindingTasks(project);
 
-    // 3. State + Composite
+    // 3. Task lifecycle (State pattern)
+    demonstrateTaskLifecycle();
+
+    // 4. Blocking demonstration
+    demonstrateBlocking();
+
+    // 5. Cancellation demonstration
+    demonstrateCancellation();
+
+    // 6. Group operations
+    demonstrateGroupOperations();
+
+    // 7. State + Composite
     demonstrateProjectWork(project);
 
-    // 4. Iterator traversal
+    // 8. Iterator traversal
     demonstrateTraversal(project);
 
-    // 5. Second independent traversal
+    // 9. Second independent traversal
     demonstrateSecondTraversal(project);
 
-    // 6. Runtime structural modification
+    // 10. Runtime structural modification
     demonstrateRuntimeChange(project);
 
-    // 7. Decorator
+    // 11. Decorator
     demonstrateDecorators();
 
-    // 8. Final summary
-    printHeader("TASKFORGE FINAL PROJECT SUMMARY");
+    // 12. Final summary
+    demonstrateSummary(project);
 
-    std::cout << "\nProject: "
-              << project->getName()
-              << std::endl;
-
-    std::cout << "Total cost: R"
-              << project->getCost()
-              << std::endl;
-
-    std::cout << "Overall progress: "
-              << project->getProgress()
-              << "%"
-              << std::endl;
-
-    std::cout << "Total tasks: "
-              << project->getTotalTaskCount()
-              << std::endl;
-
+    // 13. Display final project
+    printHeader("TASKFORGE FINAL PROJECT STRUCTURE");
     std::cout << "\nFinal project structure:"
               << std::endl;
-
     project->display();
 
     delete project;
