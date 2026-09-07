@@ -3,16 +3,16 @@
 #include <stdexcept>
 #include <iostream>
 
-// ===== NotStartedState =====
+// NotStartedState
 void NotStartedState::start()
 {
-    std::cout << "Starting task...\n";
+    std::cout << "Let's start the task:)\n";
     context->setState(new InProgressState());
 }
 
 void NotStartedState::pause()
 {
-    std::cout << "Cannot pause a task that hasn't started.\n";
+    std::cout << "Cannot pause as the task hasn't been started.\n";
 }
 
 void NotStartedState::complete()
@@ -22,7 +22,7 @@ void NotStartedState::complete()
 
 void NotStartedState::cancel()
 {
-    std::cout << "Cancelling task...\n";
+    std::cout << "Cancelling task...:(\n";
     context->setState(new CancelledState());
 }
 
@@ -36,7 +36,7 @@ void NotStartedState::unblock()
     std::cout << "Cannot unblock a task that hasn't started.\n";
 }
 
-// ===== InProgressState =====
+// InProgressState 
 void InProgressState::start()
 {
     std::cout << "Task already in progress.\n";
@@ -71,7 +71,7 @@ void InProgressState::unblock()
     std::cout << "Cannot unblock a task that isn't blocked.\n";
 }
 
-// ===== PausedState =====
+// PausedState
 void PausedState::start()
 {
     std::cout << "Resuming task...\n";
@@ -104,7 +104,7 @@ void PausedState::unblock()
     std::cout << "Cannot unblock a task that isn't blocked.\n";
 }
 
-// ===== BlockedState =====
+//BlockedState 
 void BlockedState::start()
 {
     std::cout << "Cannot start a blocked task. Unblock first.\n";
@@ -137,7 +137,7 @@ void BlockedState::unblock()
     context->setState(new InProgressState());
 }
 
-// ===== CompletedState =====
+// CompletedState 
 void CompletedState::start()
 {
     std::cout << "Cannot start a completed task.\n";
@@ -168,7 +168,7 @@ void CompletedState::unblock()
     std::cout << "Cannot unblock a completed task.\n";
 }
 
-// ===== CancelledState =====
+//  CancelledState
 void CancelledState::start()
 {
     std::cout << "Cannot start a cancelled task.\n";
