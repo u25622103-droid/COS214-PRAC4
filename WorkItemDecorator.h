@@ -58,6 +58,7 @@ class DeadlineDecorator : public WorkItemDecorator {
     public:
         DeadlineDecorator(WorkItem* item, const std::string& deadline);
         std::string getDeadline() const;
+        void setDeadline(const std::string& d);
         void display(int depth = 0) const override;
 
 };
